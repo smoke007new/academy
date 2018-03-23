@@ -17,6 +17,8 @@ def roman_to_arab(roman_txt):
     if len(roman_txt) != 0:
 # if there is not a valid character        
         return 'Error argument'
+    elif arab_number > 3999:
+        return 'Error argument'
     else:
         return arab_number
 
@@ -27,7 +29,7 @@ def arab_to_roman(number_arab):
 # if there is not a valid character
     if  not isinstance(number_arab, int):
         return 'Error argument'
-    if number_arab <= 0:
+    if number_arab <= 0 or number_arab > 3999:
         return 'not a valid argument'
     roman_txt = ''
     for arab, roman in CONV_NUMBER_TABLE:
